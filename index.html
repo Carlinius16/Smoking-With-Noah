@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Smoking with Noah | Santander</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="viewer-bar">
+    <span class="live-dot"></span>
+    <span id="viewer-count">Cargando espectadores...</span>
+  </div>
+
+  <div id="ageModal">
+    <div class="modal-content">
+      <h1 style="font-size: 3rem;">🔞</h1>
+      <h2 style="color: var(--accent);">¿ERES MAYOR?</h2>
+      <p style="margin: 15px 0;">Confirma que eres mayor de 18 años para entrar a Smoking with Noah.</p>
+      <button class="btn-buy" style="background: var(--gradient);" onclick="confirmAge()">SÍ, SOY MAYOR</button>
+    </div>
+  </div>
+
+  <div id="productModal" onclick="closeProductModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div id="modalData"></div>
+    </div>
+  </div>
+
+  <button id="menuBtn" onclick="toggleMenu()">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+  </button>
+
+  <nav id="sideMenu">
+    <img src="../IMAGENES/smoking.jpg" class="logo-menu" alt="Logo">
+    <h3 style="color:var(--accent); margin-bottom:15px;">Smoking with Noah</h3>
+    <a href="#" onclick="showSection('inicio')">🏠 Inicio</a>
+    <a href="#" onclick="showSection('promos')">🔥 Promociones</a>
+    <a href="#" onclick="showSection('productos')">🛒 Catálogo</a>
+    <a href="#" onclick="showSection('contacto')">📱 Contacto</a>
+  </nav>
+
+  <header>
+    <div style="display:flex; align-items:center; gap:10px;">
+        <img src="../IMAGENES/smoking.jpg" class="logo-header" alt="Logo">
+        <span style="font-weight:bold; letter-spacing:1px; color:var(--accent);">SMOKING WITH NOAH</span>
+    </div>
+    <span style="font-size: 0.75rem; background: var(--secondary); padding: 4px 10px; border-radius: 5px; font-weight: bold;">BUCARAMANGA</span>
+  </header>
+
+  <section id="sec-inicio" class="view-section active">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 style="color: var(--accent); font-size: 2.2rem;">Smoking with Noah</h1>
+        <p>Los mejores equipos y la mejor atención de Santander.</p>
+    </div>
+    <h2 style="color: var(--secondary); text-align: center;">PROMOCIONES DESTACADAS ⚡</h2>
+    <div id="homePromoGrid" class="grid"></div>
+  </section>
+
+  <section id="sec-promos" class="view-section">
+    <h1 style="color: #ffbe0b; text-align: center;">OFERTAS 🔥</h1>
+    <div id="fullPromoGrid" class="grid"></div>
+  </section>
+
+  <section id="sec-productos" class="view-section">
+    <h2 style="border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Catálogo 🛒</h2>
+    <div id="mainGrid" class="grid"></div>
+  </section>
+
+  <section id="sec-contacto" class="view-section">
+    <h2>📱 Contacto</h2>
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 1.5rem; border: 1px solid var(--accent); margin-top:15px;">
+      <p>📍 Carrera 19 # 11-25, Bucaramanga, Santander</p>
+      <p>📞 WhatsApp: 3186986559</p>
+      <button class="btn-buy" style="margin-top: 1.5rem;" onclick="window.open('https://wa.me/573186986559')">Escribir al WhatsApp</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
